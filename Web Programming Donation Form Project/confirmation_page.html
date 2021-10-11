@@ -1,0 +1,57 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Response</title>
+             
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     
+    <script src="js/jquery.fallingsnow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+    
+<body>
+    <div id="validationPage">
+        <main>
+            <img src=./img/Snowglobe.png alt="Snowglobe Image" width=300 class="logo" id="pagelogo">
+   
+            <h1 id="validationHeading">FORM VALIDATED</h1>
+            <h2 id="instructions">Scroll down to accessorise Mr Snowman...</h2>
+       
+    
+            <canvas id="canvas">
+    
+            </canvas>
+        
+            <div id="accessories">
+                <p>DRAG ITEMS TO ACCESSORISE!</p>
+            
+                <br>
+                <br>
+            
+                <script>
+                $( function() {
+                            $( ".draggable" ).draggable();
+                            } );
+                </script>
+                    
+                    <img src="./img/sunglasses.png" alt="Sunglasses Image" width="155" height="55" class="draggable" class="ui-widget-content">
+                    <img src="./img/tophat.png" alt="Top Hat Image" width="160" height="160" class="draggable" class="ui-widget-content">
+                    <img src="./img/Glove1.png" alt="First Glove Image" width="120" height="150" class="draggable" class="ui-widget-content">
+                           <br>
+                    <img src="./img/Glove2.png" alt="Second Glove Image" width="120" height="150" class="draggable" class="ui-widget-content">
+                    <img src="./img/scarf3.png" alt="Scarf Two Image" width="275" height="200" class="draggable" class="ui-widget-content">     
+                    <img src="./img/pipe.png" alt="Pipe Image" width="108" height="73" class="draggable" class="ui-widget-content"> 
+                    
+                    
+                    
+            </div>
+        </main>
+
+    <footer>
+        <p>&copy; Joan Lane</p>
+   </footer>
+</div>
+</body>
+

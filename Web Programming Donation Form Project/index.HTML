@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+
+    
+ <head>
+        <meta charset="utf-8">
+        <title>Donation Page</title>
+     
+        <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet">
+    
+        <script src= "./js/javascriptcode.js" style = "text/javascript"></script>
+        <script src="./js/jqueryFile.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+      
+ 
+</head>
+    
+<body>     
+  <div id="wrapper"> 
+      
+    <header> 
+         <img src=./img/Snowglobe.png alt="Snowglobe Image" width=300 class="logo" id="pagelogo">
+        
+            <h1 class="pages">PERSONALIZED VIRTUAL GIFTS</h1>
+        
+    </header>
+      
+   
+    <main>
+         <form name="myForm" target="_blank" action="confirmation_page.html" method="get" onsubmit="return validateForm()">
+            <fieldset>
+                 <legend>Donation Form</legend>
+                   
+                    <h2>Buyer</h2>
+                        <p>
+                            <label for="fname">First Name: 
+                                <input type="text" name="frstname" id="fname"> 
+                            </label>
+				        </p>
+                    
+                        <p>
+                            <label for="surname">Surname: 
+                                <input type="text" name="surname1" id="surname"> 
+                            </label>
+				        </p>
+                 
+                        <p>
+                            <label for="email">Email:
+                                <input type="text" name="emailaddress" id="email"> 
+                            </label>
+                        </p> 
+                    
+                         <p>
+                            <label for="creditCardNum">Credit Card Number:
+                                <input name="crdtcardNo" type="text" id="creditCardNum" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="19">
+                                
+                                <script>
+                                     $('#creditCardNum').on('keyup', function(e){
+		                               var val = $(this).val();
+                                       var newval = '';
+		                               val = val.replace(/\s/g, '');
+                                        for(var i=0; i < val.length; i++) {
+    	                                   if(i%4 == 0 && i > 0) newval = newval.concat(' ');
+                                            newval = newval.concat(val[i]);
+                                                }
+                                            $(this).val(newval);
+	                                       })	
+                                </script>
+                            </label>
+                  
+                            <label for="amount"> Amount : €
+                                <input type="number" name="donationamount" id="amount" min="1" size="10">
+                            </label>
+                        </p>
+                    
+                        <p>
+                            <label for="tbDate">Purchase Date: 
+                                <input type="text" name="PurchaseDate" id="tbDate"/>
+                                
+                                <script>
+                                    $('input[id$=tbDate]').datepicker({
+                                    dateFormat: 'dd/mm/yy'
+                                    });
+                                </script>             
+                            </label>
+                        </p>
+                    
+               
+                        <h2>To:</h2>
+                         
+                        <p>   
+                            <label for="sameas">
+                                    <input type="checkbox" name="sameasbtn" id="sameas" onclick ="copy()"/>Same as above
+                            </label> 
+                        </p>
+                    
+                        <p>
+                            <label for="firstname">First Name: 
+                                <input type="text" name="Tofirstname" id="firstname"> 
+                            </label>
+				        </p>
+                       
+                        <p>
+                            <label for="surname2">Surname: 
+                                <input type="text" name="Tosurname" id="surname2"> 
+                            </label>
+				        </p>
+                    
+                    <h2>Type:</h2>
+                        <ul id="treetypes"> 
+                            <li class="trees" >
+                                <input type="radio" name="browser" id="treeA" onclick="myFunction(this.value)" value="Concolor Fir">A<img src = "./img/concolor_fir.png" alt ="Concolor Christmas Tree" width ="80" height="140"> 
+                            </li>
+                            
+                            <li class="trees">
+                                <input type="radio" name="browser" onclick="myFunction(this.value)" id="treeB" value="Grand Fir">B<img src = "./img/grand_fir.png" alt ="Grand Fir Christmas Tree" width ="80" height="140"> 
+                            </li>
+                            
+                            <li class="trees">
+                                <input type="radio" name="browser" onclick="myFunction(this.value)" id="treeC" value="Colorado Spruce">C<img src = "./img/ColoradoBSpruce.png" alt ="Colorado Spruce Christmas Tree" width ="80px" height="140px">
+                            </li>
+                        </ul>
+                    
+                        <p>
+                            <label for="treeresult">Name of Tree:
+                                <input type="text" name="treename" id="treeresult"> 
+                            </label>
+				        </p>
+                    
+                        <br>
+                    
+                        <p>
+                            <label for="personalisedmessage">
+                                <textarea name="message" id="personalisedmessage" rows="5" cols="70" maxlength="300" placeholder="add personalised message (optional)..."></textarea>
+                            </label>
+                         </p>
+                
+                        <p>    
+                            <label for="confirmdetails"> Tick to confirm details before submission:
+                                <input type="checkbox" name ="confirmation" id="confirmdetails" onclick="display()" onsubmit="if (this.confirmation.checked == false) { alert ('Please confirm details!'); return false; } else { return true; }"/>
+                            </label>
+                        </p>    
+                        
+                        <p>
+
+                            <input type="submit" id="submit" value="Submit">
+ 
+                        </p>    
+            </fieldset>
+        </form>
+      </main>
+      
+      <footer>
+        <p>&copy; Joan Lane</p>
+      </footer>
+      
+</div>
+  
+</body>
+
+</html>
